@@ -108,7 +108,7 @@ a.post-edit-link:hover,
 }
 .page_title a:hover,
 .page_title a:active {
-	color: #ffc641;
+	color: #55bac6;
 }
 .post-categories a {
 	background-color: #ffc641;
@@ -148,10 +148,10 @@ a.post-edit-link:hover,
 }
 small,
 .commentmetadata {
-	color: #55bac6;
+	color: #ffc641;
 }
 .tagline {
-	color: #fff;
+	color: #55bac6;
 }
 .title,
 .title a,
