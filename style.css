@@ -253,14 +253,13 @@ a:visited.post-edit-link {
 	padding-top: 22px;
 	display: block;
 	font-size: 12px;
-	line-height: 10px;
-	
+	line-height: 10px;	
 }
 .post-yelloww {
 	padding-top: 12px;
 	display: block;
-	font-size: 15px;
-	line-height: 0px;	
+	font-size: 11px;
+	line-height: 0px;
 }
 .post-sidebar {
 	width: 100px;
@@ -359,6 +358,22 @@ li.widget ul li a:active {
 	padding: 0px;
 	list-style: none;
 	list-style-type: none;
+}
+#sidebar .menu a {
+	display: block;
+	width: 194px;
+	text-align: left;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	padding: 8px;
+	list-style: none;
+	list-style-type: none;
+	font-weight: bold;
+	font-size: 16px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	text-transform: lowercase;
+	font-style: italic;
+	color: #fff;
 }
 #sidebar .menu a {
 	display: block;
