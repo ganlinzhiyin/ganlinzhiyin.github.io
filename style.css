@@ -236,8 +236,8 @@ a:visited.post-edit-link {
 .post-day {
 	display: block;
 	clear: both;
-	font-size: 28px;
-	line-height: 33px;
+	font-size: 23px;
+	line-height: 30px;
 }
 .postmetadata,
 .form-allowed-tags {
@@ -247,7 +247,20 @@ a:visited.post-edit-link {
 .post-month {
 	padding-top: 22px;
 	display: block;
-	font-size: 22px;
+	font-size: 30px;
+}
+.post-title {
+	padding-top: 22px;
+	display: block;
+	font-size: 12px;
+	line-height: 10px;
+	
+}
+.post-yelloww {
+	padding-top: 12px;
+	display: block;
+	font-size: 15px;
+	line-height: 0px;	
 }
 .post-sidebar {
 	width: 100px;
