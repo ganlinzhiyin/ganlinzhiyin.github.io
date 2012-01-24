@@ -51,6 +51,7 @@
 			    my_jPlayer.jPlayer("play");
 		    }
 		    first_track = false;
+        $(".jp-title").children().children("li").text($(this).text());
 		    $(this).blur();
 		    return false;
 	    })
@@ -69,6 +70,13 @@
 		    
 	      
 				<div class="post-sidebar">
+				  <div class="post-date">
+					  <a href="http://www.test.chinagoer.com/?p=1" rel="bookmark" title="Permanent Link to Hello world!">
+						  <span class="post-month">mp3&#32;</span>
+						  
+						  <span class="post-day"><span style="font-family : Courier; color: #ffc641;"> 下载</span></span>
+					  </a>
+				  </div>
 				  <div class="post-date">
 					  <a href="http://www.test.chinagoer.com/?p=1" rel="bookmark" title="Permanent Link to Hello world!">
 						  <span class="post-month">mp3&#32;</span>
@@ -114,7 +122,7 @@
               </div>
               <div class="jp-title">
                 <ul>
-                  <li>祢是我的唯一</li>
+                  <li>1.祢是我的唯一</li>
                 </ul>
               </div>
               <div class="jp-no-solution">
@@ -123,8 +131,8 @@
               </div>
             </div>
           </div>
-				  <div class="entry"><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/1.%E7%A5%A2%E6%98%AF%E6%88%91%E7%9A%84%E5%94%AF%E4%B8%80.mp3">
-              1.祢是我的唯一</a><br />
+				  <div class="entry"><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/1.%E7%A5%A2%E6%98%AF%E6%88%91%E7%9A%84%E5%94%AF%E4%B8%80.mp3"
+              class="track track-default">1.祢是我的唯一</a><br />
 
 				    <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/2.%E6%88%91%E4%BB%AC%E6%84%9F%E8%B0%A2%E6%95%AC%E6%8B%9C%E7%A5%A2.mp3"
 				       class="track track-default">2.我们感谢敬拜祢</a><br />
