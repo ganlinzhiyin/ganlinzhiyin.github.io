@@ -16,7 +16,22 @@
     <script type="text/javascript">
       $(document).ready(function() {
 
-        $("#jquery_jplayer_1").jPlayer({
+  	    // Local copy of jQuery selectors, for performance.
+  	    var	my_jPlayer = $("#jquery_jplayer"),
+  		  my_trackName = $("#jp_container .track-name"),
+  		  my_playState = $("#jp_container .play-state"),
+  		  my_extraPlayInfo = $("#jp_container .extra-play-info");
+  
+  	    // Some options
+  	    var	opt_play_first = false, // If true, will attempt to auto-play the default track on page loads. No effect on mobile devices, like iOS.
+  		  opt_auto_play = true, // If true, when a track is selected, it will auto-play.
+  		  opt_text_playing = "Now playing", // Text when playing
+  		  opt_text_selected = "Track selected"; // Text when not playing
+      
+  	    // A flag to capture the first track
+  	    var first_track = true;
+
+        $("#jquery_jplayer").jPlayer({
           ready: function(event) {
             $(this).jPlayer("setMedia", {
               mp3: "https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/1.%E7%A5%A2%E6%98%AF%E6%88%91%E7%9A%84%E5%94%AF%E4%B8%80.mp3"
@@ -25,6 +40,20 @@
           swfPath: "http://www.jplayer.org/2.1.0/js",
           supplied: "mp3, oga"
         });
+
+	    // Create click handlers for the different tracks
+	    $(".track").click(function(e) {
+		    my_trackName.text($(this).text());
+		    my_jPlayer.jPlayer("setMedia", {
+			    mp3: $(this).attr("href")
+		    });
+		    if((opt_play_first && first_track) || (opt_auto_play && !first_track)) {
+			    my_jPlayer.jPlayer("play");
+		    }
+		    first_track = false;
+		    $(this).blur();
+		    return false;
+	    })
       });      
     </script>
   </head>
@@ -33,7 +62,7 @@
     <div class="wrapper">
 	    <div class="header">
 			  <h1 class="title"><a href="http://www.test.chinagoer.com/">gan<span style="font-family : Arial, Helvetica, sans-serif;color: #ffc641;">lin</span>zhi<span style="font-family : Arial, Helvetica, sans-serif;color: #ffc641;">yin</span>.com</a></h1>
-			  <h2 class="tagline">甘霖之音：From Behind Closed Doors</h2>
+			  <h2 class="tagline">甘霖之音<span class="orange">：</span>From Behind Closed Doors</h2>
 
 		  </div>
 	    <div id="content" class="content">
@@ -53,80 +82,95 @@
 				  <h2 class="page_title"><a href="http://www.test.chinagoer.com/?p=1" rel="bookmark" title="Permanent Link to Hello world!">  祢是我的唯一</a></h2>
 				  <small><span class="post-author">甘霖之音 Vol.1</span></small>
 
- <div id="jquery_jplayer_1" class="jp-jplayer"></div>
-        
-        <div id="jp_container_1" class="jp-audio">
+          <div id="jquery_jplayer" class="jp-jplayer"></div>
+          
+          <div id="jp_container_1" class="jp-audio">
             <div class="jp-type-single">
-                <div class="jp-gui jp-interface">
-                    <ul class="jp-controls">
-                        
-                        <!-- comment out any of the following <li>s to remove these buttons -->
-                        
-                        <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
-                        <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
-                        <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
-                        <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
-                        <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
-                        <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
-                    </ul>
-                    
-                    <!-- you can comment out any of the following <div>s too -->
-                    
-                    <div class="jp-progress">
-                        <div class="jp-seek-bar">
-                            <div class="jp-play-bar"></div>
-                        </div>
-                    </div>
-                    <div class="jp-volume-bar">
-                        <div class="jp-volume-bar-value"></div>
-                    </div>
-                    <div class="jp-current-time"></div>
-                    <div class="jp-duration"></div>                   
+              <div class="jp-gui jp-interface">
+                <ul class="jp-controls">
+                  
+                  <!-- comment out any of the following <li>s to remove these buttons -->
+                  
+                  <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+                  <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+                  <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+                  <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+                  <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+                  <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+                </ul>
+                
+                <!-- you can comment out any of the following <div>s too -->
+                
+                <div class="jp-progress">
+                  <div class="jp-seek-bar">
+                    <div class="jp-play-bar"></div>
+                  </div>
                 </div>
-                <div class="jp-title">
-                    <ul>
-                        <li>祢是我的唯一</li>
-                    </ul>
+                <div class="jp-volume-bar">
+                  <div class="jp-volume-bar-value"></div>
                 </div>
-                <div class="jp-no-solution">
-                    <span>Update Required</span>
-                    To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
-                </div>
+                <div class="jp-current-time"></div>
+                <div class="jp-duration"></div>                   
+              </div>
+              <div class="jp-title">
+                <ul>
+                  <li>祢是我的唯一</li>
+                </ul>
+              </div>
+              <div class="jp-no-solution">
+                <span>Update Required</span>
+                To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+              </div>
             </div>
-        </div>
-				  <div class="entry"><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/1.%E7%A5%A2%E6%98%AF%E6%88%91%E7%9A%84%E5%94%AF%E4%B8%80.mp3">1.祢
-				  是我的唯一</a><br />
+          </div>
+				  <div class="entry"><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/1.%E7%A5%A2%E6%98%AF%E6%88%91%E7%9A%84%E5%94%AF%E4%B8%80.mp3">
+              1.祢是我的唯一</a><br />
 
-				             <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/2.%E6%88%91%E4%BB%AC%E6%84%9F%E8%B0%A2%E6%95%AC%E6%8B%9C%E7%A5%A2.mp3">2.我们感谢敬拜祢</a><br />
-				             
-				             <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/3.%E8%AF%89%E4%B8%8D%E5%B0%BD.mp3">3.诉不尽</a><br />
-				             
-				                        <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/4.%E5%B9%B3%E5%87%A1%E7%9A%84%E6%88%91.mp3">4.平凡的我</a><br />
-				                        
-				                        <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/5.%E4%B8%8D%E7%A6%BB%E5%BC%83.mp3">5.不离弃</a><br />
-				                        
-				                        <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/6.%E5%8F%AA%E6%9C%89%E8%80%B6%E7%A8%A3.mp3">6.只有耶稣</a><br />
-				                        
-				                        <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/7.%E7%A5%9E%E7%88%B1%E4%B8%96%E4%BA%BA.mp3"> 7.神爱世人</a><br />
-				                        
-				                        <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/8.%E6%88%91%E7%9A%84%E6%96%B9%E5%90%91.mp3">8.我的方向</a><br />
-				                        
-				                        <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/9.%E9%AB%98%E5%91%BC%E5%92%8C%E6%95%A3%E9%82%A3.mp3">9.高呼和散那</a><br />
-				                        
-				                        <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/10.%E7%A5%A2%E7%88%B1%E5%B0%86%E6%88%91%E8%9E%8D%E5%8C%96.mp3">10.祢爱将我融化</a><br />
-				                        
-				                        <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/11.%E4%BC%9F%E5%A4%A7%E7%9A%84%E7%88%B1.mp3">11.伟大的爱</a><br />
-				                        
-				                        <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/12.%E5%AF%BB%E6%B1%82%E7%A5%A2.mp3">12.寻求祢</a><br />
-				                        
-				                        <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/13.%E6%88%91%E7%9A%84%E4%B8%BB%E6%88%91%E7%88%B1%E7%A5%A2.mp3"> 13.我的主我爱祢</a><br />
-				                        
-				                        <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/14.%E4%B8%BB%E7%9A%84%E5%A4%A7%E7%88%B1.mp3">14.主的大爱</a><br />
-				                        
-				                        <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/15.%E6%88%91%E6%B8%B4%E6%85%95%E7%A5%A2.mp3">15.我渴慕祢</a><br />
-				                        
-				                        <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/16.%E8%BF%87%E5%BE%97%E8%83%9C%E7%9A%84%E7%94%9F%E6%B4%BB.mp3">16.过得胜的生活</a><br />
-				                        
+				    <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/2.%E6%88%91%E4%BB%AC%E6%84%9F%E8%B0%A2%E6%95%AC%E6%8B%9C%E7%A5%A2.mp3"
+				       class="track track-default">2.我们感谢敬拜祢</a><br />
+				    
+				    <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/3.%E8%AF%89%E4%B8%8D%E5%B0%BD.mp3"
+				       class="track track-default">3.诉不尽</a><br />
+				    
+				    <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/4.%E5%B9%B3%E5%87%A1%E7%9A%84%E6%88%91.mp3"
+				    class="track track-default">4.平凡的我</a><br />
+				    
+				    <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/5.%E4%B8%8D%E7%A6%BB%E5%BC%83.mp3"
+				       class="track track-default">5.不离弃</a><br />
+				    
+				    <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/6.%E5%8F%AA%E6%9C%89%E8%80%B6%E7%A8%A3.mp3"
+				     class="track track-default">6.只有耶稣</a><br />
+				    
+				    <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/7.%E7%A5%9E%E7%88%B1%E4%B8%96%E4%BA%BA.mp3"
+				       class="track track-default"> 7.神爱世人</a><br />
+				    
+				    <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/8.%E6%88%91%E7%9A%84%E6%96%B9%E5%90%91.mp3"
+				       class="track track-default">8.我的方向</a><br />
+				    
+				    <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/9.%E9%AB%98%E5%91%BC%E5%92%8C%E6%95%A3%E9%82%A3.mp3"
+				       class="track track-default">9.高呼和散那</a><br />
+				    
+				    <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/10.%E7%A5%A2%E7%88%B1%E5%B0%86%E6%88%91%E8%9E%8D%E5%8C%96.mp3"
+				       class="track track-default">10.祢爱将我融化</a><br />
+				    
+				    <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/11.%E4%BC%9F%E5%A4%A7%E7%9A%84%E7%88%B1.mp3"
+				       class="track track-default">11.伟大的爱</a><br />
+				    
+				    <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/12.%E5%AF%BB%E6%B1%82%E7%A5%A2.mp3"
+				       class="track track-default">12.寻求祢</a><br />
+				    
+				    <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/13.%E6%88%91%E7%9A%84%E4%B8%BB%E6%88%91%E7%88%B1%E7%A5%A2.mp3"
+				       class="track track-default"> 13.我的主我爱祢</a><br />
+				    
+				    <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/14.%E4%B8%BB%E7%9A%84%E5%A4%A7%E7%88%B1.mp3"
+				       class="track track-default">14.主的大爱</a><br />
+				    
+				    <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/15.%E6%88%91%E6%B8%B4%E6%85%95%E7%A5%A2.mp3"
+				       class="track track-default">15.我渴慕祢</a><br />
+				    
+				    <a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/16.%E8%BF%87%E5%BE%97%E8%83%9C%E7%9A%84%E7%94%9F%E6%B4%BB.mp3"
+				       class="track track-default">16.过得胜的生活</a><br />
+				    
 					  <p>&nbsp;</p>
 				  </div>
 
@@ -148,13 +192,13 @@
       <ul id="sidebar" class="sidebar" >
 	      <li id="navmenu" class="navmenu">
 		      <div class="menu"><ul>
-		        <li class="page_item page-item-2"><a href="http://www.test.chinagoer.com/?page_id=2">DONATE $</a></li></ul></div>
+		          <li class="page_item page-item-2"><a href="http://www.test.chinagoer.com/?page_id=2">DONATE $</a></li></ul></div>
 	      </li>
         <li id="recent-posts-2" class="widget widget_recent_entries">		<h3 class="widgettitle">
-            </li>
-		      </ul>
-        </li>
-      </ul>
+          </li>
+		    </ul>
+      </li>
+    </ul>
     </div><!-- end div.wrapper -->
     <div class="footer-wrapper">
 	    <div class="sun"></div>
