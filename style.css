@@ -162,9 +162,10 @@ a:visited.post-edit-link {
 	margin-bottom: 10px;
 }
 .post {
-	float: left;
+	float: none;
 	width: 630px;
 	clear: right;
+	margin-left: 130px;
 }
 .post-categories {
 	clear: both;
