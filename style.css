@@ -162,9 +162,10 @@ a:visited.post-edit-link {
 	margin-bottom: 10px;
 }
 .post {
-	float: left;
+	float: none;
 	width: 630px;
 	clear: right;
+	margin-left: 130px;
 }
 .post-categories {
 	clear: both;
@@ -217,6 +218,7 @@ a:visited.post-edit-link {
 	text-align: center;
 	margin-right: 25px;
 }
+
 .post-date a:link,
 .post-date a:visited,
 .post-date a:hover,
@@ -235,8 +237,8 @@ a:visited.post-edit-link {
 .post-day {
 	display: block;
 	clear: both;
-	font-size: 28px;
-	line-height: 33px;
+	font-size: 23px;
+	line-height: 30px;
 }
 .postmetadata,
 .form-allowed-tags {
@@ -246,7 +248,19 @@ a:visited.post-edit-link {
 .post-month {
 	padding-top: 22px;
 	display: block;
-	font-size: 22px;
+	font-size: 30px;
+}
+.post-title {
+	padding-top: 22px;
+	display: block;
+	font-size: 12px;
+	line-height: 10px;	
+}
+.post-yelloww {
+	padding-top: 12px;
+	display: block;
+	font-size: 11px;
+	line-height: 0px;
 }
 .post-sidebar {
 	width: 100px;
@@ -362,6 +376,22 @@ li.widget ul li a:active {
 	font-style: italic;
 	color: #fff;
 }
+#sidebar .menu a {
+	display: block;
+	width: 194px;
+	text-align: left;
+	border-radius: 10px;
+	margin-bottom: 10px;
+	padding: 8px;
+	list-style: none;
+	list-style-type: none;
+	font-weight: bold;
+	font-size: 16px;
+	font-family: Georgia, "Times New Roman", Times, serif;
+	text-transform: lowercase;
+	font-style: italic;
+	color: #fff;
+}
 #sidebar .menu ul.children li a {
 	text-indent: 15px;
 }
@@ -457,7 +487,7 @@ li.widget ul li a:active {
 	margin-bottom: 0px;
 	margin-left: 0px;
 	margin-right: 0px;
-	margin-top: 20px;
+	margin-top: 3px;
 }
 .title {
 	line-height: 1;
