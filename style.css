@@ -72,6 +72,8 @@ html {
     border-radius: 10px;
     margin-right: 10px;
 }
+#nav li:hover{background-color:#ffc641;
+}
 #main {
     float:left;
     width:465px;
@@ -154,6 +156,10 @@ h6 {
     -moz-border-radius: 5px;
     border-radius: 5px;
 }
+#footer .logo:hover{
+		text-decoration: none;
+    background-color:#ffc641;
+}
 #footer .grass {
     background-image: url('images/grass.png');
     z-index: 50;
@@ -186,3 +192,4 @@ h6 {
     z-index: 50;
 }
 a:link {text-decoration: none; color:#55BAC6;}
+a:hover {color:#ffc641;}
