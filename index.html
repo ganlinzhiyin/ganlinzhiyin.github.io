@@ -19,6 +19,11 @@
       opt_text_selected = "Track selected"; // Text when not playing
       var first_track = true;
 
+			var	opt_play_first = false, // If true, will attempt to auto-play the default track on page loads. No effect on mobile devices, like iOS.
+  		  opt_auto_play = true, // If true, when a track is selected, it will auto-play.
+  		  opt_text_playing = "Now playing", // Text when playing
+  		  opt_text_selected = "Track selected"; // Text when not playing
+
       $("#jquery_jplayer").jPlayer({
       ready: function(event) {
       $(this).jPlayer("setMedia", {
@@ -123,21 +128,21 @@
   </div>
   <ol>
     <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/1.%E7%A5%A2%E6%98%AF%E6%88%91%E7%9A%84%E5%94%AF%E4%B8%80.mp3"class="track track-default">祢是我的唯一</a></li>
-    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/2.%E6%88%91%E4%BB%AC%E6%84%9F%E8%B0%A2%E6%95%AC%E6%8B%9C%E7%A5%A2.mp3"class="track track-default">我们感谢敬拜祢</a></li>
-    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/3.%E8%AF%89%E4%B8%8D%E5%B0%BD.mp3"class="track track-default">诉不尽</a></li>
-    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/4.%E5%B9%B3%E5%87%A1%E7%9A%84%E6%88%91.mp3"class="track track-default">平凡的我</a></li>
-    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/5.%E4%B8%8D%E7%A6%BB%E5%BC%83.mp3"class="track track-default">不离弃</a></li>
-    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/6.%E5%8F%AA%E6%9C%89%E8%80%B6%E7%A8%A3.mp3"class="track track-default">只有耶稣</a></li>
-    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/7.%E7%A5%9E%E7%88%B1%E4%B8%96%E4%BA%BA.mp3"class="track track-default"> 神爱世人</a></li>
-    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/8.%E6%88%91%E7%9A%84%E6%96%B9%E5%90%91.mp3"class="track track-default">我的方向</a></li>
-    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/9.%E9%AB%98%E5%91%BC%E5%92%8C%E6%95%A3%E9%82%A3.mp3"class="track track-default">高呼和散那</a></li>
-    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/10.%E7%A5%A2%E7%88%B1%E5%B0%86%E6%88%91%E8%9E%8D%E5%8C%96.mp3"class="track track-default">祢爱将我融化</a></li>
-    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/11.%E4%BC%9F%E5%A4%A7%E7%9A%84%E7%88%B1.mp3"class="track track-default">伟大的爱</a></li>
-    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/12.%E5%AF%BB%E6%B1%82%E7%A5%A2.mp3"class="track track-default">寻求祢</a></li>
-    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/13.%E6%88%91%E7%9A%84%E4%B8%BB%E6%88%91%E7%88%B1%E7%A5%A2.mp3"class="track track-default">我的主我爱祢</a></li>
-    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/14.%E4%B8%BB%E7%9A%84%E5%A4%A7%E7%88%B1.mp3"class="track track-default">主的大爱</a></li>
-    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/15.%E6%88%91%E6%B8%B4%E6%85%95%E7%A5%A2.mp3"class="track track-default">我渴慕祢</a></li>
-    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/16.%E8%BF%87%E5%BE%97%E8%83%9C%E7%9A%84%E7%94%9F%E6%B4%BB.mp3"class="track track-default">过得胜的生活</a></li>
+    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/2.%E6%88%91%E4%BB%AC%E6%84%9F%E8%B0%A2%E6%95%AC%E6%8B%9C%E7%A5%A2.mp3" class="track track-default">我们感谢敬拜祢</a></li>
+    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/3.%E8%AF%89%E4%B8%8D%E5%B0%BD.mp3" class="track track-default">诉不尽</a></li>
+    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/4.%E5%B9%B3%E5%87%A1%E7%9A%84%E6%88%91.mp3" class="track track-default">平凡的我</a></li>
+    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/5.%E4%B8%8D%E7%A6%BB%E5%BC%83.mp3" class="track track-default">不离弃</a></li>
+    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/6.%E5%8F%AA%E6%9C%89%E8%80%B6%E7%A8%A3.mp3" class="track track-default">只有耶稣</a></li>
+    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/7.%E7%A5%9E%E7%88%B1%E4%B8%96%E4%BA%BA.mp3" class="track track-default"> 神爱世人</a></li>
+    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/8.%E6%88%91%E7%9A%84%E6%96%B9%E5%90%91.mp3" class="track track-default">我的方向</a></li>
+    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/9.%E9%AB%98%E5%91%BC%E5%92%8C%E6%95%A3%E9%82%A3.mp3" class="track track-default">高呼和散那</a></li>
+    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/10.%E7%A5%A2%E7%88%B1%E5%B0%86%E6%88%91%E8%9E%8D%E5%8C%96.mp3" class="track track-default">祢爱将我融化</a></li>
+    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/11.%E4%BC%9F%E5%A4%A7%E7%9A%84%E7%88%B1.mp3" class="track track-default">伟大的爱</a></li>
+    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/12.%E5%AF%BB%E6%B1%82%E7%A5%A2.mp3" class="track track-default">寻求祢</a></li>
+    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/13.%E6%88%91%E7%9A%84%E4%B8%BB%E6%88%91%E7%88%B1%E7%A5%A2.mp3" class="track track-default">我的主我爱祢</a></li>
+    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/14.%E4%B8%BB%E7%9A%84%E5%A4%A7%E7%88%B1.mp3" class="track track-default">主的大爱</a></li>
+    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/15.%E6%88%91%E6%B8%B4%E6%85%95%E7%A5%A2.mp3" class="track track-default">我渴慕祢</a></li>
+    <li><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/16.%E8%BF%87%E5%BE%97%E8%83%9C%E7%9A%84%E7%94%9F%E6%B4%BB.mp3" class="track track-default">过得胜的生活</a></li>
   </ol>
 </p>
 </div>
