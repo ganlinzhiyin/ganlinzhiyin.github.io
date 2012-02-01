@@ -19,17 +19,18 @@ body {
     top:-65px;
 }
 .tagline {
-    color:#55BAC6;
-    font-style:normal;
-    font-size:18px;
-    font-family:Georgia, "Times New Roman", serif;
-    float:left;
-    clear:left;
-    position:relative;
-    font-weight:normal;
-    display:block;
-    margin:0px;
-    padding:0px;
+	color:#55BAC6;
+	font-style:normal;
+	font-size:20px;
+	font-family:Georgia, "Times New Roman", serif;
+	float:left;
+	clear:left;
+	position:relative;
+	font-weight:bold;
+	display:block;
+	margin:0px;
+	padding:0px;
+	text-transform: none;
 }
 body,
 html {
@@ -105,15 +106,15 @@ html {
     font-weight:bold;
 }
 h1 {
-    font-family:Arial, Helvetica, sans-serif;
-    font-size:55px;
-    font-weight:bold;
-    position:relative;
-    text-transform:lowercase;
-    letter-spacing:-4px;
-    float:left;
-    display:block;
-    margin:0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:80px;
+	font-weight:bold;
+	position:relative;
+	text-transform:lowercase;
+	letter-spacing:-4px;
+	float:left;
+	display:block;
+	margin:0;
 }
 h2 {
     margin:0 0 1em;
