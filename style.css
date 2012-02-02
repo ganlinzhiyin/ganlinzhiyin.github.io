@@ -131,7 +131,19 @@ h6 {
     padding:10px;
     color:#55BAC6;
 }
-
+#playlist {
+    float:left;
+    width:220px;
+    padding:10px;		
+}
+#download {
+    float:right;
+    width:120px;
+    padding:10px;		
+}
+#download ul.a {
+		list-style-type:none;
+}
 #footer {
     position:relative;
     top:-100px;
