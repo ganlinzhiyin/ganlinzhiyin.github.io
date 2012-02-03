@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>甘霖之音
+    </title>
+    <link href="./style.css" rel="stylesheet" type="text/css" />
+  </head>
+
+  <body>
+  <div class="vine"></div>
+    <div id="wrap">
+      <div id="header">
+        <h1 class="title"><span style="font-family : Arial, Helvetica, sans-serif;color: #55BAC6;">gan</span><span style="font-family : Arial, Helvetica, sans-serif;color: #ffc641;">lin</span><span style="font-family : Arial, Helvetica, sans-serif; color: #55BAC6;">zhi</span><span style="font-family : Arial, Helvetica, sans-serif;color: #ffc641;">yin</span><span style="font-family : Arial, Helvetica, sans-serif;color: #55BAC6;">.com</span></h1>
+        <h2 class="tagline">甘霖之音：From Behind Closed Doors</h2>
+      </div>
+
+      <div id="nav">
+        <ul>
+          <li>Donate  捐赠</li>
+          <li>Contact  联系我们</li>
+          <li><a href="./about.html">About Us  关于我们</a></li>
+          <li>Videos 视频</li>
+        </ul>
+      </div>
+      <div id="main">
+<div id="footer">
+  <div class="sun"></div>
+  <div class="logo"><a href="https://github.com/ganlinzhiyin/ganlinzhiyin.github.com/raw/master/%E7%94%98%E9%9C%96%E4%B9%8B%E9%9F%B3.jpg" title="Because Only Jesus Matters"><span style="color: white; font-size:10px; font-family: Arial, Helvetica, sans-serif;" >LIVE.LOVE.SHINE.</a></div>
+  <div class="grass"></div>
+  <div class="land"></div>
+  <div class="colophon">copyright 2012</div>
+</div>
+
+</body>
+</html>
