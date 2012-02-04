@@ -145,20 +145,25 @@ h6 {
     padding:10px;
     color:#55BAC6;
 }
-#playlist1 {
+#playlist {
     float:left;
-    width:200px;
-    padding:10px;		
+    width:160px;
+    padding:5px;		
 }
-#playlist2 {
+#download {
     float:right;
     width:80px;
-    padding:10px;		
+    padding:3px;		
 }
-#playlist3 {
+#youtube {
+    float:right;
+    width:70px;
+    padding:3px;		
+}
+#tudou {
     float:right;
     width:80px;
-    padding:10px;		
+    padding:3px;		
 }
 ul.a {
 		list-style-type:none;
