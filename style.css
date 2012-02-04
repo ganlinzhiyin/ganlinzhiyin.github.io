@@ -146,9 +146,9 @@ h6 {
     color:#55BAC6;
 }
 #playlist {
-    float:left;
-    width:160px;
-    padding:5px;		
+	float:left;
+	width:160px;
+	padding:5px;
 }
 #download {
     float:right;
@@ -256,3 +256,5 @@ ul.a {
 }
 a:link {text-decoration:none; color:#55BAC6;}
 a:hover {color:#ffc641;}
+#content p {font-size:14px; color:#000; font-family:Arial, Helvetica, sans-serif; font-weight:300}
+
