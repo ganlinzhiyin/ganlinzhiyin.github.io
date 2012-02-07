@@ -147,23 +147,20 @@ h6 {
 }
 #playlist {
 	float:left;
-	width:160px;
 	padding:5px;
 }
 #download {
     float:right;
-    width:80px;
-    padding:3px;		
+    padding:0px;		
 }
 #youtube {
     float:right;
     width:70px;
-    padding:3px;		
+    padding:0px;		
 }
 #tudou {
     float:right;
-    width:80px;
-    padding:3px;		
+    padding:0px;		
 }
 ul.a {
 		list-style-type:none;
@@ -258,3 +255,6 @@ a:link {text-decoration:none; color:#55BAC6;}
 a:hover {color:#ffc641;}
 #content p {font-size:14px; color:#000; font-family:Arial, Helvetica, sans-serif; font-weight:300}
 
+button{
+		padding:0px;
+}
